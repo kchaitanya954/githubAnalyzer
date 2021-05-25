@@ -21,8 +21,8 @@ import urllib.request
 
 g = Github()
 user = g.get_user('kchaitanya954')
-# for repo in user.get_repos():
-#     print(repo) 
+for repo in user.get_repos():
+    print(repo) 
 
 rep = user.get_repo('clickhouse_kafka')
 print(rep)
