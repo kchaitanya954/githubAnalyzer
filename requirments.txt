@@ -1,0 +1,4 @@
+pygithub==
+requests
+funcy
+gitpython
