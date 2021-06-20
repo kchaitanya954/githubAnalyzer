@@ -1,6 +1,6 @@
 from repoDownload import gitDownload
 from local_style import localCodeSyle
-
+import json
 
 
 class gitStyle():
@@ -19,6 +19,13 @@ class gitStyle():
             user_json[repo_name] = {'repo_url': repo['html_url'], 'repo_style': repo_json}
         
         return user_json
+
+    def save_json(self):
+        json_style = gitStyle(self.username).style()
+        with open(f'{self.username}.json', 'w') as json_file:
+            json.dump(json_style, json_file) 
+        print(f'json file saved at location {os.getcwd()}')
+
 
 if __name__ == '__main__':
     username = input('Enter github username: ')
