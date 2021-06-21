@@ -21,7 +21,6 @@ class localCodeSyle():
         return pythonFiles
 
     def checkStyle(self, file_path):
-        # local_file_path = sepath
         with io.StringIO() as out, redirect_stdout(out):
             style_guide = legacy.get_style_guide()
             report = style_guide.check_files([file_path])

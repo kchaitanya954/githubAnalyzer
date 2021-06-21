@@ -22,7 +22,11 @@ class gitDownload():
 
     def cloneRepo(self):
         repos = gitDownload(self.username).getRepo()
-        for repo in repos:
-            Repo.clone_from(repo['clone_url'], f'github/{repo["full_name"]}')
-        print(f"Repositores cloned into the file location: {os.getcwd()}")
+        print(f'all repositories of user {self.username} are being cloned')
+        try:
+            for repo in repos:
+                Repo.clone_from(repo['clone_url'], f'github/{repo["full_name"]}')
+            print(f"Repositores cloned into the file location: {os.getcwd()}")
 
+        except:
+            print(f'repos are already cloned into the location {os.getcwd()}')
