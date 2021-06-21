@@ -14,4 +14,4 @@ pip install -r requirements.txt
 ```bash
 python git_style.py
 ```
-Enter the username of the github user to get the style information in the form of json file.
+Enter the username of the github user as an arument parser (-user, --username) to get the style information in the form of json file.
